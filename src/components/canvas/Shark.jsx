@@ -28,7 +28,7 @@ const Shark = ({ isMobile }) => {
       <primitive 
         ref={ref}
         object={scene}
-        scale={isMobile ? 2.5 : 5}
+        scale={isMobile ? 2.5 : 6}
         position={isMobile ? [0,-2,0] : [1, -3,0]}
       />
     </mesh>
@@ -40,7 +40,7 @@ const SharkCanvas = ({ isMobile }) => {
     <Canvas
       frameloop='always'
       shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [0, 25, 0], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>

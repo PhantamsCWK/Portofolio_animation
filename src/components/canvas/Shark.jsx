@@ -1,11 +1,18 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
+import { OrbitControls, Preload, useAnimations, useGLTF } from '@react-three/drei'
 
 import CanvasLoader from '../Loader'
 
 const Shark = ({ isMobile }) => {
-  const shark = useGLTF('./shark/scene.gltf')
+  const { scene, animations } = useGLTF('./shark/shark.glb')
+  const { ref, actions, names } = useAnimations(animations)
+
+  useEffect(() => {
+    actions[names].play();
+  }, []);
+
+
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
@@ -19,9 +26,10 @@ const Shark = ({ isMobile }) => {
         shadow-mapSize={1024}
       />
       <primitive 
-        object={shark.scene}
-        scale={isMobile ? 2.5 : 4}
-        position={[0,0.5,0]}
+        ref={ref}
+        object={scene}
+        scale={isMobile ? 2.5 : 5}
+        position={isMobile ? [0,-2,0] : [1, -3,0]}
       />
     </mesh>
   )
@@ -30,7 +38,7 @@ const Shark = ({ isMobile }) => {
 const SharkCanvas = ({ isMobile }) => {
   return (
     <Canvas
-      frameloop='demand'
+      frameloop='always'
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}

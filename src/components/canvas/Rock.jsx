@@ -5,7 +5,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 import CanvasLoader from '../Loader'
 
 const Rock = () => {
-  const rock = useGLTF('./lava_rock/scene.gltf')
+  const rock = useGLTF('./lava_rock/lava_rock.glb')
 
   return (
     <primitive 

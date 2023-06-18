@@ -1,4 +1,4 @@
-import { RockCanvas, BubbleCanvas, SharkCanvas, StarsCanvas } from './canvas';
+import { RockCanvas, BubbleCanvas, SharkCanvas, ParticlesCanvas } from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
@@ -21,6 +21,6 @@ export {
   RockCanvas, 
   BubbleCanvas, 
   SharkCanvas, 
-  StarsCanvas,
+  ParticlesCanvas,
   HookFish
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
-import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, HookFish } from "./components"
+import { About, Contact, Experience, Hero, Navbar, Tech, Works, ParticlesCanvas, HookFish } from "./components"
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
         <div className='bg-gradient-to-t from-red-500'>
           <Contact />
         </div>
-        <StarsCanvas />
+        <ParticlesCanvas />
       </div>
     </BrowserRouter>
   )

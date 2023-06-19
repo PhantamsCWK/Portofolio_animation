@@ -1,6 +1,6 @@
 import RockCanvas from "./Rock";
-import BubbleCanvas from "./Buble";
+import BubbleCanvas from "./Bubble";
 import SharkCanvas from "./Shark";
-import StarsCanvas from "./Stars";
+import ParticlesCanvas from "./Particles";
 
-export { RockCanvas, BubbleCanvas, SharkCanvas, StarsCanvas };
+export { RockCanvas, BubbleCanvas, SharkCanvas, ParticlesCanvas };

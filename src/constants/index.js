@@ -1,3 +1,4 @@
+import { AiOutlineGithub, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import {
     javascript,
     html,
@@ -215,5 +216,39 @@ import {
       status: "on progress"
     },
   ];
+
+  const contactList = [
+    {
+      type: "phone",
+      name: "+62-896-3990-3653",
+      click: "+62-896-3990-3653",
+      icon: AiOutlinePhone
+    },
+    {
+      type: "email",
+      name: "chandrawijaya270805@gmail.com",
+      click: "chandrawijaya270805@gmail.com",
+      icon: AiOutlineMail
+    },
+    {
+      type: "instagram",
+      name: "@chanwisuma",
+      click: "https://www.instagram.com/chanwisuma/?hl=id",
+      icon: AiOutlineInstagram
+    },
+    {
+      type: "linkedin",
+      name: "Chandra Wijaya Kusuma",
+      click: "https://www.linkedin.com/in/chandra-wijaya-kusuma-a4564122a/",
+      icon: AiOutlineLinkedin
+    },
+    {
+      type: "github",
+      name: "PhantamsCWK",
+      click: "https://github.com/PhantamsCWK",
+      icon: AiOutlineGithub
+    },
+
+  ]
   
-  export { technologies, experiences, projects };
+  export { technologies, experiences, projects, contactList };

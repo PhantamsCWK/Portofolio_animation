@@ -7,7 +7,7 @@ import * as random from 'maath/random/dist/maath-random.esm'
 const Particles = (props) => {
   const ref = useRef();
   
-  const sphere = random.inSphere(new Float32Array(2000), { radius: 1 });
+  const sphere = random.inSphere(new Float32Array(100), { radius: 1 });
 
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;
@@ -21,7 +21,7 @@ const Particles = (props) => {
         <PointMaterial 
           transparent
           color="#13255A"
-          size={0.0008}
+          size={0.005}
           sizeAttenuation={true}
           depthWrite={false}
         />

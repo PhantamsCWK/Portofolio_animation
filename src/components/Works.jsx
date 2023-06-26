@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Tilt } from 'react-tilt'
 import { AnimatePresence, motion } from 'framer-motion'
-import { AiOutlineCheck, AiOutlineHourglass, AiOutlineFieldTime } from "react-icons/ai"
+import { AiOutlineCheck, AiOutlineHourglass, AiOutlineFieldTime, AiOutlineGithub } from "react-icons/ai"
 
 import { styles } from '../styles'
-import { github } from '../assets'
 import { SectionWrapper } from '../hoc'
 import { projects } from '../constants'
 import { fadeIn, textVariant } from '../utils/motion'
@@ -46,8 +45,7 @@ const ProjectCard = ({ index, id, name, description, tags, image, source_code_li
               onClick={() => window.open(source_code_link, '_blank')}
               className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
             >
-              <img src={github} alt="github" className='w-1/2 h-1/2 object-contain'/>
-
+              <AiOutlineGithub size={20} />
             </div>
           </div>
         </div>

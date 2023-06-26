@@ -7,7 +7,7 @@ import * as random from 'maath/random/dist/maath-random.esm'
 const Particles = (props) => {
   const ref = useRef();
   
-  const sphere = random.inSphere(new Float32Array(2500), { radius: 1 });
+  const sphere = random.inSphere(new Float32Array(2000), { radius: 1 });
 
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;
@@ -36,9 +36,8 @@ const ParticlesCanvas = () => {
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
           <Particles />
+          <Preload all/>
         </Suspense>
-
-        <Preload all />
       </Canvas>
     </div>
   )

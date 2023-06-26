@@ -138,51 +138,61 @@ import {
   
   const projects = [
     {
+      id: "p1",
       name: "social media app",
       description:
         "this social media app is my firt project using Mern stack",
       tags: [
         {
           name: "react",
-          color: "blue-text-gradient",
+          color: "text-blue-600",
+        },
+        {
+          name: "redux",
+          color: "text-purple-600",
         },
         {
           name: "mui",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
+          color: "text-blue-600",
         },
         {
           name: "express",
-          color: "pink-text-gradient",
+          color: "text-green-600",
+        },
+        {
+          name: "css",
+          color: "text-blue-400",
+        },
+        {
+          name: "mongodb",
+          color: "text-green-600",
         },
       ],
       image: blur,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/PhantamsCWK/project_mern_memories",
       status: "done"
     },
     {
+      id: "p2",
       name: "Aspiration Web",
       description:
         "Web-based platform that allows users/student to make their aspiration and the admin will be process it",
       tags: [
         {
           name: "laravel",
-          color: "blue-text-gradient",
+          color: "text-red-500",
         },
         {
           name: "livewire",
-          color: "green-text-gradient",
+          color: "text-pink-500",
         },
         {
-          name: "tailwind",
-          color: "pink-text-gradient",
+          name: "bootstrap",
+          color: "text-blue-500",
         },
         {
           name: "mysql",
-          color: "pink-text-gradient",
+          color: "text-orange-500",
         },
       ],
       image: aspirasi,
@@ -190,29 +200,50 @@ import {
       status: "done"
     },
     {
+      id: "p3",
       name: "Changram",
       description:
         "Web application that enables users to make post, like post, read another post likely instagram users can personalize their account with what they want ",
       tags: [
         {
           name: "react",
-          color: "blue-text-gradient",
+          color: "text-blue-600",
         },
         {
           name: "redux",
-          color: "green-text-gradient",
+          color: "text-purple-600",
+        },
+        {
+          name: "tailwindcss",
+          color: "text-blue-400",
+        },
+        {
+          name: "RTK Query",
+          color: "text-purple-600",
         },
         {
           name: "express",
-          color: "pink-text-gradient",
+          color: "text-green-700",
+        },
+        {
+          name: "jest",
+          color: "text-pink-500",
+        },
+        {
+          name: "winston",
+          color: "text-orange-500",
+        },
+        {
+          name: "jsonwebtoken",
+          color: "text-green-500",
         },
         {
           name: "mongodb",
-          color: "pink-text-gradient",
+          color: "text-green-700",
         },
       ],
       image: changram,
-      source_code_link: "https://github.com/PhantamsCWK/social-media-app-V2",
+      source_code_link: "https://github.com/PhantamsCWK/ChanGram",
       status: "on progress"
     },
   ];

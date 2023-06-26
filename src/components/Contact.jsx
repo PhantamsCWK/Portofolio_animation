@@ -1,6 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { AiOutlineWhatsApp, AiOutlineMail, AiOutlineInstagram, AiOutlineGithub } from "react-icons/ai"
 
 import { styles } from '../styles';
 import { RockCanvas } from './canvas';
@@ -55,7 +54,7 @@ const Contact = () => {
                 className='flex flex-wrap justify-start items-center gap-2 bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium hover:cursor-pointer'
               >
                 <c.icon size={30} />
-                <span className='text-md'>
+                <span className='text-[12px] sm:text-base'>
                   {c.name}
                 </span>
               </li>

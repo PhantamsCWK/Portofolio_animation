@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-blue-800 bg-opacity-90`}
+      className={`${styles.paddingX} sticky w-full flex items-center py-5 z-50 top-0 bg-blue-800`}
       onScroll={(e) => console.log(e.currentTarget.scrollTop)}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>

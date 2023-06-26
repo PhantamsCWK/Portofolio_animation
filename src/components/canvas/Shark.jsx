@@ -50,9 +50,8 @@ const SharkCanvas = ({ isMobile }) => {
           minPolarAngle={Math.PI / 2}
         />
         <Shark isMobile={isMobile}/>
+        <Preload all/>
       </Suspense>
-
-      <Preload all />
     </Canvas>
   )
 }

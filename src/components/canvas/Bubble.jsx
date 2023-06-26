@@ -4,6 +4,7 @@ import {
   Decal,
   Float,
   OrbitControls,
+  Plane,
   Preload,
   useTexture,
 } from "@react-three/drei";
@@ -15,8 +16,11 @@ const Bubble = ({ imgUrl }) => {
 
   return (
     <>
-      <ambientLight intensity={1} />
-      <directionalLight position={[0, 0, 10]} />
+      <ambientLight />
+      <directionalLight 
+        position={[-5, 5, 5]}
+        castShadow
+      />
       <mesh castShadow receiveShadow scale={2.75}>
         <sphereGeometry args={[1, 32, 32]} />
         <meshBasicMaterial
@@ -45,13 +49,15 @@ const BubbleCanvas = ({ icon }) => {
       frameloop='always'
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
+      shadows
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
+
         <Float speed={4} rotationIntensity={1} floatIntensity={2}>
           <Bubble imgUrl={icon} />
-
         </Float>
+        <Preload all/>
       </Suspense>
     </Canvas>
   );

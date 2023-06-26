@@ -26,21 +26,22 @@ const App = () => {
         )
       }
       <BrowserRouter>
-        <div className='relative z-0 bg-primary'>
+        <div className='bg-primary'>
           <HookFish />
-          <div className=' bg-gradient-to-b from-blue-700 via-blue-900 to-primary'>
+          <div className='z-20 bg-gradient-to-b from-blue-700 via-blue-900 to-primary'>
             <Navbar />
             <Hero />
           </div>
-          <About />
-          <Experience />
-          <Tech />
-          <Works />
-          {/* <Feedbacks /> */}
-          <div className='bg-gradient-to-t from-red-500'>
-            <Contact />
-          </div>
-          <ParticlesCanvas />
+            <About />
+            <Experience />
+            <Tech />
+            <div className=' relative z-10'>
+             <Works />
+            </div>
+            <div className='relative bg-gradient-to-t from-red-500 z-0'>
+              <Contact />
+              <ParticlesCanvas />
+            </div>
         </div>
       </BrowserRouter>
     </>

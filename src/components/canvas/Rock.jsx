@@ -38,6 +38,7 @@ const RockCanvas = () => {
           mixPolarAngle={Math.PI / 2}
         />
         <Rock />
+        <Preload all/>
       </Suspense>
     </Canvas>
   )

@@ -1,6 +1,3 @@
-import logo from "./logo.svg";
-import close from "./close.svg";
-import menu from "./menu.svg"
 import smktelkom from "./company/logo-telkom.png"
 
 import git from "./tech/git.png";
@@ -19,9 +16,6 @@ import blur from "./blur_project.png";
 import changram from "./changram.png"
 
 export {
-  logo,
-  menu,
-  close,
   smktelkom,
   git,
   html,

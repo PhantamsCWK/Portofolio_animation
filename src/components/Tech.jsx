@@ -24,7 +24,7 @@ const Tech = () => {
       </span>
       <div className='flex flex-row flex-wrap justify-center gap-10'>
         {technologies.map((technology) => (
-          <div onMouseEnter={() => handleEnter(technology.name)} onMouseLeave={handleLeave} className='w-24 h-24' key={technology.name}>
+          <div onMouseEnter={() => handleEnter(technology.name)} onMouseLeave={handleLeave} className='w-28 h-28' key={technology.name}>
             <BubbleCanvas icon={technology.icon} />
           </div>
         ))}

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { styles } from '../styles';
-import { RockCanvas } from './canvas';
+import {  SharkCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
 import { contactList } from '../constants';
@@ -72,7 +72,7 @@ const Contact = () => {
           variants={slideIn('right', "tween", 0.2, 1)}
           className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
         >
-          <RockCanvas />
+          <SharkCanvas isMobile={true} />
         </motion.div>
       </div>
   )

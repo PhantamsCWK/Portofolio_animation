@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 
 import { styles } from '../styles'
-import { SharkCanvas } from './canvas'
-import { useMediaQuery } from '../hooks'
+import { RockCanvas } from './canvas'
+// import { useMediaQuery } from '../hooks'
 
 const Hero = () => {
-  const isMobile = useMediaQuery("(max-width: 758px)");
+  // const isMobile = useMediaQuery("(max-width: 758px)");
   
 
   return (
@@ -19,7 +19,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <SharkCanvas isMobile={isMobile} />
+      <RockCanvas />
 
       <div className='absolute bottom-20 w-full flex justify-center items-center'>
         <a href="#about">

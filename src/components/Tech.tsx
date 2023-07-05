@@ -1,6 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useState } from 'react'
-// import { BubbleCanvas } from './canvas'
 import { motion } from 'framer-motion'
 import { SectionWrapper } from '../hoc'
 import { technologies } from '../constants'

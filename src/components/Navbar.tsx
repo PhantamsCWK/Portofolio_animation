@@ -1,18 +1,22 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { BiMenu, BiX } from "react-icons/bi";
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { styles } from '../styles'
 import { navLinks } from '../constants'
-import { BiMenu, BiX } from "react-icons/bi";
+import { useMediaQuery } from '../hooks';
 
 
 const Navbar = () => {
-  const [active, setActive] = useState('')
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
+  const location = useLocation();
+  
+  const isMobile = useMediaQuery("(max-width: 759px)");
 
   return (
     <nav 
-      className={`${styles.paddingX} sticky w-full flex items-center py-5 z-50 top-0 bg-blue-800`}
+      className={`${styles.paddingX} fixed w-full flex items-center py-5 z-[1] top-0 bg-gradient-to-b from-primary`}
       onScroll={(e) => console.log(e.currentTarget.scrollTop)}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -20,7 +24,6 @@ const Navbar = () => {
           to="/"
           className='flex items-center gap-2'
           onClick={() => {
-            setActive('');
             window.scrollTo(0,0);
           }}
         >
@@ -33,43 +36,60 @@ const Navbar = () => {
             <li
               key={link.id}
               className={`${
-                active === link.title
+                location.pathname === `/${link.id}`
                   ? "text-white"
                   : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              <Link to={link.id}>{link.title}</Link>
             </li>
           ))}
         </ul>
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
-          <span onClick={() => setToggle(!toggle)}>
-              { 
-                toggle ? <BiX size={30} /> : <BiMenu size={30} />
-              }
-          </span>
-              <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
-              <ul className='list-none flex justify-end items-start flex-col gap-4'>
-                {navLinks.map(link => (
-                  <li
-                    key={link.id}
-                    className={`${
-                      active === link.title
-                        ? "text-white"
-                        : "text-secondary"
-                    } font-poppins font-medium cursor-pointer text-[16px]`}
-                    onClick={() => {
-                      setToggle(!toggle)
-                      setActive(link.title)
-                    }}
+        
+        {
+          isMobile && (
+          <div className='flex flex-1 justify-end items-center '>
+            <span onClick={() => setToggle(!toggle)} className='z-20'>
+                { 
+                  toggle ? <BiX size={30} /> : <BiMenu size={30} />
+                }
+            </span>
+            <AnimatePresence>
+              {
+                toggle && (
+                  <motion.div 
+                    className={`black-gradient absolute top-0 right-0 z-10 h-screen`}
+                    initial={{ width: 0 }}
+                    animate={{ width: "10rem" }}
+                    exit={{ width: 0 }}
+                    transition={{ duration: 1, type: "spring" }}
                   >
-                    <a href={`#${link.id}`}>{link.title}</a>
-                  </li>
-                ))}
-              </ul>
-              </div>
-        </div>
+                  <ul 
+                    className='p-6 list-none flex justify-end items-start flex-col gap-4 mt-10'
+                  >
+                    {navLinks.map(link => (
+                      <li
+                        key={link.id}
+                        className={`${
+                          location.pathname === `/${link.id}`
+                            ? "text-blue-700"
+                            : "text-secondary"
+                        } font-poppins font-semibold cursor-pointer text-[16px]`}
+                        onClick={() => {
+                          setToggle(!toggle)
+                        }}
+                      >
+                        <Link to={link.id}>{link.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                  </motion.div>
+                )
+              }
+            </AnimatePresence>
+          </div>
+          )
+        }
       </div>
 
     </nav>

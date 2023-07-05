@@ -32,7 +32,7 @@ const ModalProject = ({ setProjectId, projectId }: ModalProjectType) => {
 
     const handleClose = () => {
       setProjectId("")
-      document.body.classList.remove("overflow-hidden");
+      // document.body.classList.remove("overflow-hidden");
     }
 
     useEffect(() => {
@@ -42,7 +42,7 @@ const ModalProject = ({ setProjectId, projectId }: ModalProjectType) => {
 
   return (
     data && (
-        <div className="px-5 fixed h-full w-full flex items-center justify-center top-0 left-0 z-50 bg-tertiary bg-opacity-50 " id='modal-project' onClick={() => handleClose()}>
+        <div className="px-5 fixed h-full w-full flex items-center justify-center top-0 left-0 z-50 bg-tertiary bg-opacity-50 overflow-y-hidden " id='modal-project' onClick={() => handleClose()}>
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{
@@ -55,6 +55,7 @@ const ModalProject = ({ setProjectId, projectId }: ModalProjectType) => {
             }}
             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
             className="absolute p-5 bg-primary h-auto rounded-3xl text-white"
+            onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={handleClose}

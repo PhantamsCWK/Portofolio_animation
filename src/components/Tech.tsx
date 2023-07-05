@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { SectionWrapper } from '../hoc'
 import { technologies } from '../constants'
-import { slideIn } from '../utils/motion'
 
 const Tech = () => {
   const [techName, setTechName] = useState<string>("");
@@ -31,9 +30,24 @@ const Tech = () => {
             onMouseLeave={handleLeave} 
             className='w-24 h-24 p-3 rounded-full bg-tertiary' 
             key={technology.name}
-            whileHover={{ scale: 1.2, backgroundColor: "#13255A" }}
-            whileTap={{ scale: 0.9, rotate: 360 }}
-            variants={slideIn("up", "spring", i * 0.3, 1)}
+            whileHover={{ 
+              scale: 1.2, 
+              rotate: 360,
+              backgroundColor: "#13255A" }}
+            whileTap={{ 
+              scale: 0.9,
+              rotate: -360, 
+              transition: { duration: 0.5 } }}
+            variants={{ 
+              hidden: { opacity: 0 },
+              show: {
+                x: 0,
+                y: 0,
+                rotate: 360,
+                opacity: 1,
+                transition: { type: "spring", duration: 0.5, delay: i * 0.2 }
+              }
+             }}
 
           >
             <img src={technology.icon} className='w-full h-full' alt="" />

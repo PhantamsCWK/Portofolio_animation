@@ -7,6 +7,7 @@ import Experience from './Experience';
 import Works from './Works';
 import Contact from './Contact';
 import HookFish from './HookFish';
+import TransitionEffect from './TransitionEffect';
 
 export {
   Hero,
@@ -19,5 +20,6 @@ export {
   RockCanvas, 
   SharkCanvas, 
   ParticlesCanvas,
-  HookFish
+  HookFish,
+  TransitionEffect
 }

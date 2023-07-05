@@ -29,7 +29,7 @@ interface Project {
 const ProjectCard = ({ index, id, name, tags, image, source_code_link, status, setProjectId }: Project) => {
   const handleOpenModal = () => {
     setProjectId(id)
-    document.body.classList.add("overflow-hidden");
+    // document.body.classList.add("overflow-hidden");
   }
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5 ,0.75)} onClick={handleOpenModal}>

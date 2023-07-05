@@ -15,16 +15,13 @@ const Particles = () => {
     ref.current.rotation.y -= delta / 15;
   })
 
-  console.log(sphere)
-
-
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points ref={ref} positions={sphere} stride={3} frustumCulled >
         <PointMaterial 
           transparent
           color="#13255A"
-          size={0.001}
+          size={0.0025}
           sizeAttenuation={true}
           depthWrite={false}
         />

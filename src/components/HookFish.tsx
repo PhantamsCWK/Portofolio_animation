@@ -13,7 +13,7 @@ const HookFish = () => {
 
   return (
     <motion.div
-      className='fixed z-10 h-96 w-20 left-[-25px] sm:left-0 lg:left-4 flex flex-col justify-start items-center max-h-[38rem] '
+      className='fixed z-10 h-96 w-20 left-[-25px] sm:left-0 lg:left-4 flex flex-col justify-start items-center min-h-[10rem] max-h-[38rem]'
       style={{ height: scaleY }}
     >
         <div className='bg-black w-1 h-full' />

@@ -2,8 +2,6 @@ import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 
-import CanvasLoader from '../Loader'
-
 const Rock = () => {
   const rock = useGLTF('./lava_rock/lava_rock.glb')
 
@@ -30,7 +28,7 @@ const RockCanvas = () => {
         position: [-4, 3, 6]
        }}
     >
-      <Suspense fallback={<CanvasLoader />}>
+      <Suspense fallback={null}>
         <OrbitControls 
           autoRotate={true}
           enableZoom={false}

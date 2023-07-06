@@ -2,8 +2,6 @@ import { Suspense, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload, useAnimations, useGLTF } from '@react-three/drei'
 
-import CanvasLoader from '../Loader'
-
 const Shark = ({ isMobile } : { isMobile: boolean } ) => {
   const { scene, animations } = useGLTF('./shark/shark.glb')
   const { ref, actions, names } = useAnimations(animations)
@@ -45,7 +43,7 @@ const SharkCanvas = ({ isMobile } : { isMobile: boolean }) => {
       camera={{ position: [0, 25, 0], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Suspense fallback={<CanvasLoader />}>
+      <Suspense fallback={null}>
         <OrbitControls 
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
